@@ -1,55 +1,55 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-:root{
---primary-color: #f6f7fb;
---white-color:#fff;
---black-color: #18191a;
---red-color: #e74c3c;
+:root {
+  --primary-color: #f6f7fb;
+  --white-color: #fff;
+  --black-color: #18191a;
+  --red-color: #e74c3c;
 }
-body{
+body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--primary-color);
 }
-.container .clock{
+.container .clock {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   background: var(--white-color);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1),0 25px 45px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.clock label{
+.clock label {
   position: absolute;
   inset: 20px;
   text-align: center;
-  transform: rotate(calc(var(--i) * (360deg/12)));
+  transform: rotate(calc(var(--i) * (360deg / 12)));
 }
-.clock label span{
+.clock label span {
   display: inline-block;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  transform: rotate(calc(var(--i) * (-360deg/12)));
+  transform: rotate(calc(var(--i) * (-360deg / 12)));
   color: var(--black-color);
 }
-.indicator{
+.indicator {
   position: absolute;
   height: 10px;
   width: 10px;
   display: flex;
   justify-content: center;
 }
-.indicator::before{
+.indicator::before {
   position: absolute;
-  content:'';
+  content: "";
   background-color: var(--black-color);
   height: 100%;
   width: 100%;
@@ -57,46 +57,76 @@ body{
   border-radius: 50%;
   z-index: 100;
 }
-.indicator .hand{
+.indicator .hand {
   position: absolute;
-  height: 130px;
+  height: 100px;
   width: 4px;
   bottom: 0;
   transform-origin: bottom;
   background-color: var(--red-color);
   border-radius: 25px;
 }
-.hand.min{
+.hand.min {
   position: absolute;
   background-color: var(--black-color);
-  height: 120px;
-  width: 5px;
+  height: 90px;
+  width: 4px;
 }
-.hand.hour{
+.hand.hour {
   position: absolute;
   background-color: var(--black-color);
-  height: 100px;
-  width: 8px;
+  height: 80px;
+  width: 6px;
 }
-.swtich{
+.swtich {
   background-color: var(--black-color);
   color: var(--white-color);
   border-radius: 5px;
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   border: 0;
   outline: 0;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 60px;
 }
-body.dark{
---primary-color: #242526;
---white-color:#18191a;
---black-color: #fff;
---red-color: #e74c3c;
+body.dark {
+  --primary-color: #242526;
+  --white-color: #18191a;
+  --black-color: #fff;
+  --red-color: #e74c3c;
+}
+
+@media screen and (min-width: 768px) {
+  .container .clock {
+    height: 400px;
+    width: 400px;
+  }
+
+  .clock label span {
+    font-size: 30px;
+  }
+
+  .indicator .hand {
+    height: 130px;
+  }
+
+  .hand.min {
+    height: 120px;
+    width: 5px;
+  }
+
+  .hand.hour {
+    height: 100px;
+    width: 8px;
+  }
+
+  .switch {
+    width: 150px;
+    height: 50px;
+  }
 }
